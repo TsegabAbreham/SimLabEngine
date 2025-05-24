@@ -1,0 +1,17 @@
+site_name: SimLabEngine
+nav:
+  - Home: index.md
+  - Getting Started:
+      - Installation: getting_started/installation.md
+  - Documentation:
+      - Scene: documentation/scene.md
+      - Objects: 
+            - Box and Circle: documentation/objects/box
+            - Image: documentation/objects/image
+            - Text: documentation/objects/text
+            - Cloth: documentation/objects/cloth
+  - Example Projects:
+      - Simple Scene: example_projects/simple_scene.md
+
+theme: material 
+     
