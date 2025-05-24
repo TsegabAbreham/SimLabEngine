@@ -2,6 +2,7 @@ import sys
 import os
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 from RawSimLabEngine.engine import *
+import pygame
 
 scene = Scene(
     width=800,
@@ -10,10 +11,9 @@ scene = Scene(
     title="Cloth Simulation"
 )
 
-
 cloth = Cloth(
-    rows=30,
-    cols=30,
+    rows=20,
+    cols=20,
     spacing=5,
     vel=[0, 0],
     pos=(400, 300),
@@ -31,8 +31,13 @@ box =  Box(
     gravity=0,
 )
 
-box.add_rule(velocity)
-box.add_rule(gravity)
+def handle_event(event):
+    if event.type == pygame.KEYDOWN:
+        if event.key == pygame.K_e:
+            box.add_rule(velocity)
+            box.add_rule(gravity)
+
+
 
 cloth.add_rule(gravity)
 cloth.add_rule(velocity)
@@ -43,4 +48,4 @@ cloth.add_rule(clothsimualtion)
 scene.add(cloth, box)
 
 
-scene.simulate(duration=10, fps=60)
+scene.simulate(duration=10, fps=60, on_event=handle_event)

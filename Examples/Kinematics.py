@@ -22,7 +22,7 @@ def acceleration_rule(obj, dt):
     obj.pos[1] += obj.vel[1] * dt
 
 def main():
-    # Create the simulation scene.
+    # Create the simulation scene. 
     scene = Scene(
         width=800,
         height=600,

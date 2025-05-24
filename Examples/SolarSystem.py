@@ -4,14 +4,12 @@ sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 from RawSimLabEngine.engine import *
 import math
 
-
-
 G = 1  # Scaled gravitational constant for visual simulation
 
 scene = Scene(1920, 1080, (0, 0, 0), "Simulated Solar System")
 
 # Central star (Sun)
-sun = Circle((960, 540), (0, 0), 50, mass=1e9, gravity=0, bounciness=0)
+sun = Circle((960, 540), (0, -200), 50, mass=1e9, gravity=0, bounciness=0)
 scene.add(sun)
 
 # Planets data: (distance from sun, radius, mass, color)
